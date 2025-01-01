@@ -13,11 +13,6 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className="relative bg-white p-10 rounded-lg shadow-lg w-full max-w-md z-20">
-      <div className="absolute top-3 left-5 text-purple-600 text-xl font-bold">
-        <Link href="/" className="hover:underline">
-          T I C K E T E R
-        </Link>
-      </div>
       <h2 className="text-xl font-semibold text-gray-800 text-center mb-6">Login to your account</h2>
 
       <form>
@@ -42,6 +37,14 @@ const LoginForm: React.FC = () => {
             >
               &#128065;
             </span>
+          </div>
+          <div className="mt-2 text-right">
+            <a
+              href="/ForgotPassword"
+              className="text-purple-600 text-sm hover:underline"
+            >
+              Forgot Password?
+            </a>
           </div>
         </div>
 

@@ -4,16 +4,16 @@
 import React, { useState } from 'react';
 
 const SignupForm = () => {
-  const [gender, setGender] = useState<string>('');  // Manage the selected value
+  const [gender, setGender] = useState<string>('');
 
   const handleGenderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setGender(e.target.value);  // Update gender value
+    setGender(e.target.value);
   };
 
   return (
     <div className="w-1/2 p-10">
       <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Create an account</h2>
-      <p className="text-gray-600 text-center mb-4">Enter Your Details Below To Register</p>
+      <p className="text-gray-600 text-left mb-4 font-bold ">Enter Your Details Below To Register</p>
 
       <form>
         <div className="grid grid-cols-2 gap-4 mb-4">
@@ -39,9 +39,9 @@ const SignupForm = () => {
 
         <div className="mb-4">
           <select
-            className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-600 outline-none"
-            value={gender}  // Use value for controlled input
-            onChange={handleGenderChange}  // Handle change in selection
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-400 focus:ring-2 focus:ring-purple-600 outline-none"
+            value={gender}
+            onChange={handleGenderChange}
           >
             <option value="" disabled>
               Gender
@@ -52,6 +52,8 @@ const SignupForm = () => {
           </select>
         </div>
 
+
+
         <div className="mb-4">
           <input
             type="text"
@@ -60,12 +62,15 @@ const SignupForm = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <p className="text-gray-600 text-left mb-4 font-bold ">Password</p>
+        <div className="mb-4">
           <input
             type="password"
             placeholder="Enter your password"
             className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-600 outline-none"
           />
+        </div>
+        <div className="mb-4">
           <input
             type="password"
             placeholder="Confirm your password"
