@@ -32,4 +32,4 @@ const NowShowing = () => {
   );
 };
 
-export default NowShowing;
+export default NowShowing;      

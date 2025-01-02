@@ -24,19 +24,19 @@ const MyTickets = () => {
   return (
     <div className="bg-gradient-to-t from-purple-800 via-black to-black min-h-screen flex flex-col">
       <Navbar />
-      <div className="px-8 py-6">
-        <h1 className="text-center text-3xl font-bold mb-8">MY TICKETS</h1>
-        <div className="space-y-8">
+      <div className="px-4 py-6 md:px-8 md:py-10">
+        <h1 className="text-center text-3xl font-bold mb-8 text-white">MY TICKETS</h1>
+        <div className="space-y-8 md:space-y-10">
           {tickets.map((ticket, index) => (
             <TicketCard
-                  key={index}
-                  date={ticket.date}
-                  title={ticket.title}
-                  tickets={ticket.tickets}
-                  time={ticket.time}
-                  movieImage={ticket.movieImage}
-                  qrImage={ticket.qrImage}
-                         />
+              key={index}
+              date={ticket.date}
+              title={ticket.title}
+              tickets={ticket.tickets}
+              time={ticket.time}
+              movieImage={ticket.movieImage}
+              qrImage={ticket.qrImage}
+            />
           ))}
         </div>
       </div>

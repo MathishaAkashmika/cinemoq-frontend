@@ -33,17 +33,18 @@ const MovieCard: React.FC<MovieCardProperties> = ({ imageUrl, MovieID, title }) 
           <div className="text-center text-white">
             <h3 className="text-lg font-bold">{title}</h3>
             <div className="mt-4 flex flex-col space-y-2">
-              <button className="bg-purple-600 hover:bg-gray-700 text-white py-2 px-4 rounded w-full">
-              <i className="fas fa-play mr-2 w-5 h-4"></i>
+              <button className="bg-purple-600 hover:bg-gray-700 text-white py-2 px-4 rounded w-full md:w-auto">
+                <i className="fas fa-play mr-2 w-5 h-4"></i>
                 Watch Trailer
               </button>
               <Link href={`/${MovieID}`}>
-                <button className="bg-purple-600 hover:bg-gray-700 text-white py-2 px-4 rounded w-full">
-                <i className="fa-solid fa-circle-info mr-2 w-5 h-4"></i>
+                <button className="bg-purple-600 hover:bg-gray-700 text-white py-2 px-4 rounded w-full md:w-auto">
+                  <i className="fa-solid fa-circle-info mr-2 w-5 h-4"></i>
                   Explore More
                 </button>
               </Link>
             </div>
+
           </div>
         </div>
       )}

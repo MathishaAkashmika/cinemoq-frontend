@@ -1,6 +1,5 @@
 "use client"
 
-
 import React, { useState } from 'react';
 
 const SignupForm = () => {
@@ -11,12 +10,12 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="w-1/2 p-10">
+    <div className="w-full max-w-md mx-auto p-6 md:p-10">
       <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Create an account</h2>
-      <p className="text-gray-600 text-left mb-4 font-bold ">Enter Your Details Below To Register</p>
+      <p className="text-gray-600 text-left mb-4 font-bold">Enter Your Details Below To Register</p>
 
       <form>
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <input
             type="text"
             placeholder="First Name"
@@ -52,8 +51,6 @@ const SignupForm = () => {
           </select>
         </div>
 
-
-
         <div className="mb-4">
           <input
             type="text"
@@ -62,7 +59,7 @@ const SignupForm = () => {
           />
         </div>
 
-        <p className="text-gray-600 text-left mb-4 font-bold ">Password</p>
+        <p className="text-gray-600 text-left mb-4 font-bold">Password</p>
         <div className="mb-4">
           <input
             type="password"
