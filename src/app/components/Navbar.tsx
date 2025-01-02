@@ -1,13 +1,16 @@
 "use client";
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-black bg-opacity-90 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-      <Link href="/" className="text-purple-500 text-2xl font-bold hover:text-purple-400">
+      <Link
+        href="/"
+        className="text-purple-500 text-2xl font-bold hover:text-purple-400"
+      >
         T I C K E T E R
       </Link>
 
@@ -15,18 +18,26 @@ const Navbar = () => {
         className="text-white md:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
+        <i
+          className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}
+        ></i>
       </button>
 
       <nav
         className={`${
-          isMenuOpen ? 'block' : 'hidden'
+          isMenuOpen ? "block" : "hidden"
         } absolute top-full left-0 w-full bg-black bg-opacity-90 md:relative md:flex md:space-x-6 md:w-auto md:top-auto md:left-auto`}
       >
-        <a href="/Movies" className="block px-4 py-2 hover:text-purple-400 md:px-0">
+        <a
+          href="/Movies"
+          className="block px-4 py-2 hover:text-purple-400 md:px-0"
+        >
           MOVIES
         </a>
-        <a href="/MyTickets" className="block px-4 py-2 hover:text-purple-400 md:px-0">
+        <a
+          href="/MyTickets"
+          className="block px-4 py-2 hover:text-purple-400 md:px-0"
+        >
           MY TICKETS
         </a>
         <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
@@ -46,6 +57,11 @@ const Navbar = () => {
         <a href="/Login">
           <button className="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded">
             Login
+          </button>
+        </a>
+        <a href="/UserProfile">
+          <button className=" text-white py-2 px-4 rounded">
+            <i className="fa-regular fa-circle-user text-2xl"></i>
           </button>
         </a>
       </div>
