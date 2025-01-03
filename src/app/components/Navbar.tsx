@@ -7,17 +7,10 @@ const Navbar = () => {
 
   return (
     <header className="bg-black bg-opacity-90 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-<<<<<<< HEAD
       <Link href="/" className="text-purple-500 text-2xl font-bold hover:text-purple-400">
         C I N E M O Q
-=======
-      <Link
-        href="/"
-        className="text-purple-500 text-2xl font-bold hover:text-purple-400"
-      >
-        T I C K E T E R
->>>>>>> d5fe0a2a7bd906f9cdb348e8faaf96fec9c69a27
       </Link>
+
 
       <button
         className="text-white md:hidden"
@@ -29,9 +22,8 @@ const Navbar = () => {
       </button>
 
       <nav
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } absolute top-full left-0 w-full bg-black bg-opacity-90 md:relative md:flex md:space-x-6 md:w-auto md:top-auto md:left-auto`}
+        className={`${isMenuOpen ? "block" : "hidden"
+          } absolute top-full left-0 w-full bg-black bg-opacity-90 md:relative md:flex md:space-x-6 md:w-auto md:top-auto md:left-auto`}
       >
         <a
           href="/Movies"
@@ -52,7 +44,7 @@ const Navbar = () => {
           CONTACT US
         </a>
         <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
-        <i className="fa-brands fa-rocketchat text-2xl md:text-xl"></i>
+          <i className="fa-brands fa-rocketchat text-2xl md:text-xl"></i>
         </a>
       </nav>
 
