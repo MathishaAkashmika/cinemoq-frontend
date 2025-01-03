@@ -1,6 +1,7 @@
 import Banner from "@/app/components/Banner";
 import BookingSection from "@/app/components/BookingSection";
 import BookingSummary from "@/app/components/BookingSummary";
+import Footer from "@/app/components/Footer";
 import MovieDetails from "@/app/components/MovieDetails";
 import Navbar from "@/app/components/Navbar";
 import SeatSelection from "@/app/components/SeatSelection";
@@ -194,6 +195,7 @@ export default async function TicketBookingPage({
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
