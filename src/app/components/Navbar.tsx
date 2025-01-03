@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <header className="bg-black bg-opacity-90 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
       <Link href="/" className="text-purple-500 text-2xl font-bold hover:text-purple-400">
-        T I C K E T E R
+        C I N E M O Q
       </Link>
 
       <button
@@ -30,10 +30,13 @@ const Navbar = () => {
           MY TICKETS
         </a>
         <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
-          SHOP
+          ABOUT US
         </a>
         <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
           CONTACT US
+        </a>
+        <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
+        <i className="fa-brands fa-rocketchat text-2xl md:text-xl"></i>
         </a>
       </nav>
 

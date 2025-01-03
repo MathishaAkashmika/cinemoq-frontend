@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 import MovieDetails from "../components/MovieDetails";
 import Navbar from "../components/Navbar";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -166,6 +167,7 @@ export default async function MovieDetailPage({ params }: { params: { MovieID: s
         starring={[]}
         MovieID={MovieID}  
       />
+      <Footer />
     </div>
     
   );

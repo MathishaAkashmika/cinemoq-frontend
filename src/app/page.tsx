@@ -1,4 +1,5 @@
 import ComingSoon from "./components/ComingSoon";
+import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import NowShowing from "./components/NowShowing";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <NowShowing />
       <ComingSoon />
+      <Footer />
     </div>
   );
 }

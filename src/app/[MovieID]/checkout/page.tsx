@@ -12,7 +12,7 @@ const CheckoutPage = () => {
           <h2 className="text-2xl font-bold mb-12">BOOKING SUMMARY</h2>
           <div className="mb-8">
             <p className="text-sm text-gray-400">MOVIE TITLE</p>
-            <p className="font-semibold">SPIDERMAN NO WAY HOME</p>
+            <p className="font-semibold">Split 2</p>
           </div>
           <div className="mb-8">
             <p className="text-sm text-gray-400">Date</p>
