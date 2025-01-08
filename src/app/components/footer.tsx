@@ -44,28 +44,14 @@ const Footer: React.FC = () => {
                                 <Link href="#" className="hover:text-purple-600">Community Chat</Link>
                             </li>
                             <li>
-                                <Link href="/careers" className="hover:text-purple-600">Careers</Link>
+                                <Link href="#" className="hover:text-purple-600">Careers</Link>
                             </li>
                             <li>
                                 <Link href="#" className="hover:text-purple-600">Announcement</Link>
                             </li>
-                            <li>
-                                <Link href="/disclaimer" className="hover:text-purple-600">Disclaimer</Link>
-                            </li>
-                            <li>
-                                <Link href="/news_and_events" className="hover:text-purple-600">News And Events</Link>
-                            </li>
-                            <li>
-                                <Link href="/return_policy" className="hover:text-purple-600">Return Policy</Link>
-                            </li>
-                            <li>
-                                <Link href="/terms_and_conditions" className="hover:text-purple-600">Terms And Conditions</Link>
-                            </li>
                         </ul>
                     </div>
                 </div>
-
-               
 
                 <div className="flex items-center justify-center space-x-8 py-8">
                     <a
@@ -99,8 +85,8 @@ const Footer: React.FC = () => {
                     © 1996-2021 COPYRIGHT RESERVED
                 </div>
             </div>
-            </div>
+        </div>
     );
 };
 
-export default Footer;
+export default Footer;
