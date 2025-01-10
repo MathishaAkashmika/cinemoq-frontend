@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                                 <Link href="/about_us" className="hover:text-purple-600">About Us</Link>
                             </li>
                             <li>
-                                <Link href="/contact_us" className="hover:text-purple-600">Contact Us</Link>
+                                <Link href="contact_us" className="hover:text-purple-600">Contact Us</Link>
                             </li>
                         </ul>
                     </div>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
                                 <Link href="/ticketbooking" className="hover:text-purple-600">My Tickets</Link>
                             </li>
                             <li>
-                                <Link href="CommunityChat" className="hover:text-purple-600">Community Chat</Link>
+                                <Link href="#" className="hover:text-purple-600">Community Chat</Link>
                             </li>
                             <li>
                                 <Link href="/careers" className="hover:text-purple-600">Careers</Link>
@@ -51,6 +51,7 @@ const Footer: React.FC = () => {
                             </li>
                         </ul>
                     </div>
+
                     <div className="flex-1">
                         <ul className="py-10 mb-4 space-y-3 text-gray-300">
                             <li>
@@ -67,9 +68,10 @@ const Footer: React.FC = () => {
                             </li>
                         </ul>
                     </div>
+                    
                 </div>
 
-                <div className="flex items-center justify-center space-x-8 py-8">
+                <div className="flex items-center justify-center space-x-8 py-2">
                     <a
                         href="#"
                         target="_blank"
@@ -106,3 +108,5 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+
