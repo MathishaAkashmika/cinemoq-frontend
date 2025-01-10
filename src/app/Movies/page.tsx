@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import SearchMovie from "../components/SearchMovie";
 import { useRef } from "react";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Footer from "../components/Footer";
+import Footer from "../components/FooterNew";
 
 const MoviesPage: React.FC = () => {
   const MoviesByCategory = {

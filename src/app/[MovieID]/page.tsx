@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import Footer from "../components/Footer";
+import Footer from "../components/FooterNew";
 import MovieDetails from "../components/MovieDetails";
 import Navbar from "../components/Navbar";
 import '@fortawesome/fontawesome-free/css/all.min.css';
