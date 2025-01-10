@@ -26,10 +26,10 @@ const Footer: React.FC = () => {
                                 <Link href="/Movies" className="hover:text-purple-600">Movies</Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-purple-600">About Us</Link>
+                                <Link href="/about_us" className="hover:text-purple-600">About Us</Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-purple-600">Contact Us</Link>
+                                <Link href="contact_us" className="hover:text-purple-600">Contact Us</Link>
                             </li>
                         </ul>
                     </div>
@@ -44,16 +44,34 @@ const Footer: React.FC = () => {
                                 <Link href="#" className="hover:text-purple-600">Community Chat</Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-purple-600">Careers</Link>
+                                <Link href="/careers" className="hover:text-purple-600">Careers</Link>
                             </li>
                             <li>
                                 <Link href="#" className="hover:text-purple-600">Announcement</Link>
                             </li>
                         </ul>
                     </div>
+
+                    <div className="flex-1">
+                        <ul className="py-10 mb-4 space-y-3 text-gray-300">
+                            <li>
+                                <Link href="/disclaimer" className="hover:text-purple-600">Disclaimer</Link>
+                            </li>
+                            <li>
+                                <Link href="/terms_and_conditions" className="hover:text-purple-600">Terms & Conditions</Link>
+                            </li>
+                            <li>
+                                <Link href="/news_and_events" className="hover:text-purple-600">News & Events</Link>
+                            </li>
+                            <li>
+                                <Link href="/return_policy" className="hover:text-purple-600">Return Policy</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
 
-                <div className="flex items-center justify-center space-x-8 py-8">
+                <div className="flex items-center justify-center space-x-8 py-2">
                     <a
                         href="#"
                         target="_blank"

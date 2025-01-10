@@ -6,10 +6,13 @@ import { FiInstagram } from "react-icons/fi";
 import { AiFillTikTok } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const ContactUs = () => 
   {
-  return (
+  return (<div><Navbar />
+
       <div
       className="min-h-screen flex items-center justify-center py-8"
       style={
@@ -148,6 +151,9 @@ const ContactUs = () =>
       </div>
       </div>
       </div>
+      <Footer />
+      </div>
+      
   );
 };
 

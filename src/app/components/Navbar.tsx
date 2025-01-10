@@ -30,31 +30,31 @@ const Navbar = () => {
       >
         <a
           href="/Movies"
-          className="block px-4 py-2 hover:text-purple-400 md:px-0"
+          className="block px-4 py-2 hover:text-purple-400 md:px-0 "
         >
           MOVIES
         </a>
         <a
           href="/MyTickets"
-          className="block px-4 py-2 hover:text-purple-400 md:px-0"
+          className="block px-4 py-2 hover:text-purple-400 md:px-0 "
         >
           MY TICKETS
         </a>
-        <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
+        <a href="/about_us" className="block px-4 py-2 hover:text-purple-500 md:px-0 ">
           ABOUT US
         </a>
-        <a href="#" className="block px-4 py-2 hover:text-purple-500 md:px-0">
+        <a href="/contact_us" className="block px-4 py-2 hover:text-purple-500 md:px-0 ">
           CONTACT US
         </a>
         <a
           href="/CommunityChat"
-          className="block px-4 py-2 hover:text-purple-500 md:px-0"
+          className="block px-4 py-2 hover:text-purple-500 md:px-0 "
         >
           <i className="fa-brands fa-rocketchat text-2xl md:text-xl"></i>
         </a>
         <a
           href="/Dashboard"
-          className="block px-4 py-2 hover:text-purple-500 md:px-0"
+          className="block px-4 py-2 hover:text-purple-500 md:px-0 "
         >
           ADMIN
         </a>

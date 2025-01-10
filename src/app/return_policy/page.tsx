@@ -1,8 +1,11 @@
 import React from "react";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const ReturnPolicy = () => {
   return (
-    <div
+   <div><Navbar />
+      <div
       className="bg-gradient-to-r from-purple-800 to-black relative overflow-hidden"
       style={
         {
@@ -116,7 +119,11 @@ const ReturnPolicy = () => {
        </p>
      </div>
     </div>
-  );
+    <div>
+    </div>
+    <Footer />
+    </div>
+     );
 };
 
 export default ReturnPolicy;
