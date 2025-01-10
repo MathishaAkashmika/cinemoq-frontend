@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import ComingSoon from "./components/ComingSoon";
-import Footer from "./components/Footer";
+import Footer from "./components/FooterNew";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import NowShowing from "./components/NowShowing";
