@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -9,7 +7,7 @@ interface AddAnnouncement {
   description: string;
   email: string;
   mobileNumber: string;
-  file: File | null;
+  files: File[]; // Updated to allow multiple files
 }
 
 const AddAnnouncement = () => {
@@ -18,7 +16,7 @@ const AddAnnouncement = () => {
     description: "",
     email: "",
     mobileNumber: "",
-    file: null,
+    files: [], // Initialize as an empty array
   });
 
   const handleChange = (
@@ -29,8 +27,8 @@ const AddAnnouncement = () => {
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData({ ...formData, file });
+    const selectedFiles = e.target.files ? Array.from(e.target.files) : [];
+    setFormData({ ...formData, files: selectedFiles });
   };
 
   const handleSave = () => {
@@ -44,7 +42,7 @@ const AddAnnouncement = () => {
       description: "",
       email: "",
       mobileNumber: "",
-      file: null,
+      files: [],
     });
     alert("Form reset!");
   };
@@ -80,7 +78,27 @@ const AddAnnouncement = () => {
             ></textarea>
           </div>
 
-          
+          {/* File Upload */}
+          <div className="mb-4">
+            <label className="block text-sm mb-1">Attach Files</label>
+            <input
+              type="file"
+              multiple // Allow multiple file uploads
+              onChange={handleFileChange}
+              className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none"
+            />
+            <div className="mt-2">
+              {formData.files.map((file, index) => (
+                <div
+                  key={index}
+                  className="text-sm text-gray-400 flex items-center gap-2"
+                >
+                  <i className="fa-solid fa-file text-gray-500"></i>
+                  {file.name}
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Buttons */}
           <div className="flex justify-end gap-4 mt-6">
