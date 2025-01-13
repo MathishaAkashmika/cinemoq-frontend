@@ -28,7 +28,7 @@ const AddMovies = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -128,13 +128,23 @@ const AddMovies = () => {
             </div>
             <div>
               <label className="block text-sm mb-1">Genre</label>
-              <input
-                type="text"
+              <select
                 name="genre"
                 value={formData.genre}
                 onChange={handleChange}
                 className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-              />
+              >
+                <option value="" disabled>
+                  Select a genre
+                </option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+              </select>
             </div>
           </div>
 
