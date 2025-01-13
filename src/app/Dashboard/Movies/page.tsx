@@ -1,71 +1,7 @@
-// const Movies = () => {
-//   return (
-//     <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-//       <h2 className="text-2xl font-semibold mb-4">Add Movie</h2>
-//       <form className="space-y-4">
-//         <input
-//           type="text"
-//           placeholder="Title"
-//           className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-//         />
-//         <textarea
-//           placeholder="Description"
-//           className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-//         ></textarea>
-//         <div className="grid grid-cols-4 gap-4">
-//           <input
-//             type="text"
-//             placeholder="Runtime"
-//             className="p-2 rounded-md bg-gray-700 border border-gray-600"
-//           />
-//           <input
-//             type="text"
-//             placeholder="Rating"
-//             className="p-2 rounded-md bg-gray-700 border border-gray-600"
-//           />
-//           <input
-//             type="text"
-//             placeholder="Showtime"
-//             className="p-2 rounded-md bg-gray-700 border border-gray-600"
-//           />
-//           <input
-//             type="text"
-//             placeholder="Genre"
-//             className="p-2 rounded-md bg-gray-700 border border-gray-600"
-//           />
-//         </div>
-//         <input
-//           type="text"
-//           placeholder="Trailer"
-//           className="w-full p-2 rounded-md bg-gray-700 border border-gray-600"
-//         />
-//         <div className="grid grid-cols-2 gap-4">
-//           <div>
-//             <label className="block text-sm">Thumbnail</label>
-//             <input type="file" className="w-full p-2 rounded-md" />
-//           </div>
-//           <div>
-//             <label className="block text-sm">Movie Banner</label>
-//             <input type="file" className="w-full p-2 rounded-md" />
-//           </div>
-//         </div>
-//         <div className="flex gap-4 mt-6">
-//           <button className="bg-red-600 px-6 py-2 rounded-md text-white hover:bg-red-700">
-//             SAVE
-//           </button>
-//           <button className="bg-gray-600 px-6 py-2 rounded-md text-white hover:bg-gray-700">
-//             CANCEL
-//           </button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Movies;
 
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface Movie {
@@ -129,13 +65,19 @@ const Movies = () => {
       {/* Header with Add Movie Button */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Movies</h1>
-        <button
+        {/* <button
           onClick={handleAddMovie}
           className="flex items-center gap-2 px-6 py-2 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700"
         >
           <i className="fa-solid fa-plus"></i>
           Add Movie
-        </button>
+        </button> */}
+        <Link href="Movies/Add-movies">
+      <button className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md shadow-md">
+        <i className="fa-solid fa-plus"></i>
+        <span>Add Movies</span>
+      </button>
+    </Link>
       </div>
 
       {/* Movie Table */}

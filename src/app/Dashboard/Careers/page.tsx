@@ -1,142 +1,113 @@
-// const Careers = () => {
-//   return <p>This is Careers page</p>;
-// };
-
-// export default Careers;
-
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface Career {
+  id: number;
   title: string;
   description: string;
-  email: string;
-  mobileNumber: string;
-  file: File | null;
 }
 
+const initialCareers: Career[] = [
+  {
+    id: 1,
+    title: "Software Engineer",
+    description: "Responsible for developing and maintaining web applications.",
+  },
+  {
+    id: 2,
+    title: "UI/UX Designer",
+    description: "Design user interfaces and experiences for web platforms.",
+  },
+  {
+    id: 3,
+    title: "Project Manager",
+    description: "Manage project timelines and deliverables.",
+  },
+];
+
 const Careers = () => {
-  const [formData, setFormData] = useState<Career>({
-    title: "",
-    description: "",
-    email: "",
-    mobileNumber: "",
-    file: null,
-  });
+  const [careers, setCareers] = useState<Career[]>(initialCareers);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleView = (id: number) => {
+    alert(`View details of career ID: ${id}`);
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData({ ...formData, file });
+  const handleEdit = (id: number) => {
+    alert(`Edit career with ID: ${id}`);
   };
 
-  const handleSave = () => {
-    console.log("Form Data:", formData);
-    alert("Career details saved!");
-  };
-
-  const handleCancel = () => {
-    setFormData({
-      title: "",
-      description: "",
-      email: "",
-      mobileNumber: "",
-      file: null,
-    });
-    alert("Form reset!");
+  const handleDelete = (id: number) => {
+    setCareers(careers.filter((career) => career.id !== id));
+    alert(`Deleted career with ID: ${id}`);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-800 via-black to-black p-8 text-white">
-      {/* Header */}
-      <h1 className="text-3xl font-bold mb-6 text-center">Careers</h1>
+      {/* Header with Add Career Button */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Careers</h1>
+        <Link href="Careers/Add-careers">
+          <button className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md shadow-md">
+            <i className="fa-solid fa-plus"></i>
+            <span>Add Career</span>
+          </button>
+        </Link>
+      </div>
 
-      {/* Form Section */}
-      <div className="bg-gray-800 rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
-        <form>
-          {/* Title */}
-          <div className="mb-4">
-            <label className="block text-sm mb-1">Title</label>
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-            />
-          </div>
+      {/* Careers Table */}
+      <div className="overflow-x-auto bg-gray-800 rounded-lg shadow-lg">
+        <table className="min-w-full bg-gray-700 text-white rounded-md">
+          <thead>
+            <tr className="bg-gray-900 text-left text-sm font-semibold">
+              <th className="py-3 px-4">Title</th>
+              <th className="py-3 px-4">Description</th>
+              <th className="py-3 px-4 text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {careers.map((career) => (
+              <tr
+                key={career.id}
+                className="hover:bg-gray-800 border-b border-gray-600"
+              >
+                <td className="py-2 px-4">{career.title}</td>
+                <td className="py-2 px-4 truncate">{career.description}</td>
+                <td className="py-2 px-4 flex justify-center gap-4">
+                  <button
+                    onClick={() => handleView(career.id)}
+                    className="text-purple-400 hover:text-purple-500"
+                  >
+                    VIEW
+                  </button>
+                  <button
+                    onClick={() => handleEdit(career.id)}
+                    className="text-blue-400 hover:text-blue-500"
+                  >
+                    <i className="fa-solid fa-pen"></i>
+                  </button>
+                  <button
+                    onClick={() => handleDelete(career.id)}
+                    className="text-red-400 hover:text-red-500"
+                  >
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-          {/* Description */}
-          <div className="mb-4">
-            <label className="block text-sm mb-1">Description</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              rows={4}
-              className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-            ></textarea>
-          </div>
-
-          {/* Email and Mobile Number */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div>
-              <label className="block text-sm mb-1">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Mobile Number</label>
-              <input
-                type="text"
-                name="mobileNumber"
-                value={formData.mobileNumber}
-                onChange={handleChange}
-                className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:border-purple-500"
-              />
-            </div>
-          </div>
-
-          {/* File Upload */}
-          <div className="mb-4">
-            <label className="block text-sm mb-1">Choose File</label>
-            <input
-              type="file"
-              onChange={handleFileChange}
-              className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none"
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="flex justify-end gap-4 mt-6">
-            <button
-              type="button"
-              onClick={handleSave}
-              className="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm"
-            >
-              SAVE
-            </button>
-            <button
-              type="button"
-              onClick={handleCancel}
-              className="px-6 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 text-sm"
-            >
-              CANCEL
-            </button>
-          </div>
-        </form>
+      {/* Action Buttons */}
+      <div className="flex justify-end gap-4 mt-6">
+        <button className="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm">
+          SAVE
+        </button>
+        <button className="px-6 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 text-sm">
+          CANCEL
+        </button>
       </div>
     </div>
   );
