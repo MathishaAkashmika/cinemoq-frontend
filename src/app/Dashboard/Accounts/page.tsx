@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface Account {
@@ -58,7 +59,15 @@ const Accounts = () => {
     <>
       {/* Main Content */}
       <div className="flex-1 p-8">
-        <h1 className="text-3xl font-bold text-white mb-6">Accounts</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Accounts</h1>
+        <Link href="Accounts/Add-account">
+      <button className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md shadow-md">
+        <i className="fa-solid fa-plus"></i>
+        <span>Add Account</span>
+      </button>
+    </Link>
+      </div>
         <div className="overflow-x-auto bg-gray-800 rounded-lg shadow-lg">
           <table className="min-w-full bg-gray-700 text-white rounded-md">
             <thead>

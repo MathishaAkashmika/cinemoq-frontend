@@ -1,11 +1,8 @@
-// const Announcements = () => {
-//   return <p>This is Announcements page</p>;
-// };
 
-// export default Announcements;
 
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface Announcement {
@@ -46,11 +43,13 @@ const Announcements = () => {
     <div className="min-h-screen bg-gradient-to-b from-purple-800 via-black to-black p-8 text-white">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Announcements</h1>
-        <button className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md shadow-md">
-          <i className="fa-solid fa-plus"></i>
-          <span>Add Announcement</span>
-        </button>
+        <h1 className="text-3xl font-bold">Announcement</h1>
+        <Link href="Announcements/Add-announcement">
+      <button className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md shadow-md">
+        <i className="fa-solid fa-plus"></i>
+        <span>Add Announcement</span>
+      </button>
+    </Link>
       </div>
 
       {/* Announcements Table */}
