@@ -6,6 +6,7 @@ export interface User {
   lastName?: string;
   gender?: string;
   address?: string;
+  profileImage?: string;
 }
 
 export interface AuthResponse {
@@ -23,6 +24,7 @@ export interface RegisterData extends LoginData {
   lastName: string;
   gender?: string;
   address?: string;
+  profileImage?: string;
 }
 
 // Token management
