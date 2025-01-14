@@ -1,9 +1,23 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if we're in the browser environment
+    if (typeof window !== 'undefined') {
+      // Check for the correct token name
+      const token = localStorage.getItem('cinemoq_auth_token');
+      console.log('Auth token:', token); // Debug log
+      setIsAuthenticated(!!token);
+    }
+  }, []);
+
+  // Debug log for render
+  console.log('Is authenticated:', isAuthenticated);
 
   return (
     <header className="bg-black bg-opacity-90 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
@@ -61,24 +75,29 @@ const Navbar = () => {
       </nav>
 
       <div className="hidden md:flex space-x-2">
-        <a href="/Signup">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
-            Sign Up
-          </button>
-        </a>
-        <a href="/Login">
-          <button className="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded">
-            Login
-          </button>
-        </a>
-        <a href="/UserProfile">
-          <button className=" text-white py-2 px-4 rounded">
-            <i className="fa-regular fa-circle-user text-2xl"></i>
-          </button>
-        </a>
+        {!isAuthenticated ? (
+          <>
+            <a href="/Signup">
+              <button className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
+                Sign Up
+              </button>
+            </a>
+            <a href="/Login">
+              <button className="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded">
+                Login
+              </button>
+            </a>
+          </>
+        ) : (
+          <a href="/UserProfile">
+            <button className="text-white py-2 px-4 rounded">
+              <i className="fa-regular fa-circle-user text-2xl"></i>
+            </button>
+          </a>
+        )}
       </div>
 
-      {isMenuOpen && (
+      {isMenuOpen && !isAuthenticated && (
         <div className="flex flex-col space-y-2 mt-4 md:hidden">
           <a href="/Signup">
             <button className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded w-full">
