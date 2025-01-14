@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 import { fetchMovies, Movie } from "../config/api";
 import { API_ERROR_MESSAGES } from "../config/api";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Footer from "../components/FooterNew";
 
 const MoviesPage: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -70,7 +69,6 @@ const MoviesPage: React.FC = () => {
           </section>
         )}
       </div>
-      <Footer />
     </div>
   );
 };

@@ -52,7 +52,7 @@ const LoginForm: React.FC = () => {
       }
 
       handleAuthSuccess(data);
-      router.push('/Movies/');
+      router.push('/');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {

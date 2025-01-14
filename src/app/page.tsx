@@ -1,19 +1,16 @@
 "use client";
 
-import Link from "next/link";
+
 import ComingSoon from "./components/ComingSoon";
 import Footer from "./components/FooterNew";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import NowShowing from "./components/NowShowing";
+import MoviesPage from "./Movies/page";
 
 export default function Home() {
 
   return (
     <div className="bg-gradient-to-b from-purple-800 via-black to-black min-h-screen">
-      <Navbar />
-      <HeroSection />
-      <NowShowing />
+     
+      <MoviesPage />
       <ComingSoon />
       <Footer />
     </div>
