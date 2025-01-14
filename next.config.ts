@@ -2,14 +2,25 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['m.media-amazon.com'],
+    domains: [
+      'm.media-amazon.com',
+      'example.com',
+      'localhost',
+      'cinemoq-bucket.s3.amazonaws.com'
+    ],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'm.media-amazon.com',
+        hostname: '**.amazonaws.com',
         port: '',
-        pathname: '/images/**',
+        pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };
