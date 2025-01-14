@@ -1,7 +1,49 @@
 import { AuthResponse, LoginData, RegisterData } from '../utils/auth';
 
+// Movie Types
+export interface Movie {
+  _id: string;
+  title: string;
+  description: string;
+  releaseDate: string;
+  duration: number;
+  rating: number;
+  genre: string[];
+  director: string;
+  cast: string[];
+  posterUrl: string | null;
+  trailerUrl?: string;
+  status: 'upcoming' | 'showing' | 'ended';
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+export interface PaginationMeta {
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+}
+
+export interface MovieListResponse extends ApiResponse<{
+  movies: Movie[];
+  pagination: PaginationMeta;
+}> {}
+
+export interface MovieDetailResponse extends ApiResponse<Movie> {}
+
+// Category Type
+export interface Category {
+  _id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
 // API Base URL
-export const API_BASE_URL = 'http://localhost:8080/v1';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/v1';
 
 // API Endpoints
 export const API_ENDPOINTS = {
@@ -14,6 +56,13 @@ export const API_ENDPOINTS = {
   user: {
     profile: `${API_BASE_URL}/user/profile`,
     updateProfile: `${API_BASE_URL}/user/profile/update`,
+  },
+  careers: `${API_BASE_URL}/careers`,
+  categories: `${API_BASE_URL}/categories`,
+  movies: {
+    list: `${API_BASE_URL}/movies`,
+    detail: `${API_BASE_URL}/movies/:id`,
+    poster: `${API_BASE_URL}/movies/:id/poster`,
   },
 } as const;
 
