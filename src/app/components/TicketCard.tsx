@@ -30,12 +30,12 @@ const TicketCard: React.FC<TicketCardProps> = ({ date, title, tickets, time, mov
    
     <div className="flex flex-col md:flex-row justify-between items-center mt-4 space-y-4 md:space-y-0">
       <div className="flex justify-center md:justify-start">
-        <Image src={qrImage} alt="QR Code" width={60} height={60} />
+        {/*<Image src={qrImage} alt="QR Code" width={60} height={60} />*/}
       </div>
-      <button className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 font-bold w-full md:w-auto text-center">
+      <a className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 font-bold w-full md:w-auto text-center" href={qrImage} download>
         <i className="fa-solid fa-download mr-2 w-5 h-4"></i>
         DOWNLOAD TICKET
-      </button>
+      </a>
     </div>
   </div>
 </div>

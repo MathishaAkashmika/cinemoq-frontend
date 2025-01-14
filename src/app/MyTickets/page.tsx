@@ -1,26 +1,35 @@
+"use client"
+
+import React, { useState, useEffect } from "react";
 import Footer from '../components/FooterNew';
 import Navbar from '../components/Navbar';
 import TicketCard from '../components/TicketCard';
+import { getUser, getAuthToken } from "../utils/auth";
+import {isAuthenticated} from "../utils/auth";
 
 const MyTickets = () => {
-  const tickets = [
-    {
-      date: 'Mon, 23 Oct 2023',
-      title: 'SMILE 2',
-      tickets: 'C8, C9, C10',
-      time: '14:40',
-      movieImage: '/images/7.jpg',
-      qrImage: '/images/qr.png',
-    },
-    {
-      date: 'Mon, 23 Oct 2023',
-      title: 'HERETIC',
-      tickets: 'C8, C9, C10',
-      time: '14:40',
-      movieImage: '/images/2.jpg',
-      qrImage: '/images/qr.png',
-    },
-  ];
+  const user = getUser()!;
+  const token = getAuthToken()!;
+
+  const [tickets, setTickets] = useState([]);
+
+  useEffect(() => {
+    fetch(process.env.NEXT_PUBLIC_API_URL + "/bookings", {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token,
+      },
+    })
+    .then(r => r.json())
+    .then(v => {
+      return Promise.all(v.docs.map(async t => ({...t, showtime: await fetch(process.env.NEXT_PUBLIC_API_URL + "/showtimes/" + t.showtimeId).then(r => r.json())})))
+    }).then(t => {
+      return Promise.all(t.map(async t => ({...t, movie: await fetch(process.env.NEXT_PUBLIC_API_URL + "/movie/" + t.showtime.movieId).then(r => r.json())})))
+    }).then(ts => {
+      console.log(ts);
+      setTickets(ts);
+    });
+  }, [])
 
   return (
     <div className="bg-gradient-to-t from-purple-800 via-black to-black min-h-screen flex flex-col">
@@ -31,12 +40,12 @@ const MyTickets = () => {
           {tickets.map((ticket, index) => (
             <TicketCard
               key={index}
-              date={ticket.date}
-              title={ticket.title}
-              tickets={ticket.tickets}
-              time={ticket.time}
-              movieImage={ticket.movieImage}
-              qrImage={ticket.qrImage}
+              date={new Date(ticket.showtime.startTime).toLocaleDateString()}
+              title={ticket.movie.name}
+              tickets={ticket.seats.length}
+              time={new Date(ticket.showtime.startTime).toLocaleTimeString()}
+              movieImage={ticket.movie.thumbnailImage}
+              qrImage={ticket.s3Url}
             />
           ))}
         </div>
