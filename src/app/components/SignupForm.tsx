@@ -15,7 +15,8 @@ const SignupForm = () => {
     firstName: '',
     lastName: '',
     gender: '',
-    address: ''
+    address: '',
+    profileImage: ''
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -60,12 +61,15 @@ const SignupForm = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          gender: formData.gender || undefined,
-          address: formData.address || undefined
+          
+            email: formData.email,
+            password: formData.password,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            gender: formData.gender || undefined,
+            address: formData.address || undefined,
+            profileImage: formData.profileImage || undefined
+         
         })
       });
 
@@ -76,7 +80,7 @@ const SignupForm = () => {
       }
 
       handleAuthSuccess(data);
-      router.push('/dashboard');
+      router.push('/Movies');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred during registration');
     } finally {
@@ -133,9 +137,9 @@ const SignupForm = () => {
             <option value="" disabled>
               Gender
             </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
@@ -149,6 +153,8 @@ const SignupForm = () => {
             className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-600 outline-none text-gray-600" 
           />
         </div>
+
+       
 
         <p className="text-gray-600 text-left mb-4 font-bold">Password</p>
         <div className="mb-4">
